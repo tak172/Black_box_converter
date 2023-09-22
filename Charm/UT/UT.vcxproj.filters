@@ -1,0 +1,316 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="CppUnit environment">
+      <UniqueIdentifier>{8be2599e-c596-48d4-beba-0b095ecb2284}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files">
+      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
+      <Extensions>cpp;c;cc;cxx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
+    </Filter>
+    <Filter Include="Source Files\helpful">
+      <UniqueIdentifier>{9975709b-ca25-414e-b2ee-887cb22ff94a}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="TestCase">
+      <UniqueIdentifier>{7d5c4887-1f21-4662-9cf7-63cdf873ea9b}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="PugiXml">
+      <UniqueIdentifier>{78ed0474-bd7f-4539-a7f2-0a58d557c8b1}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Resource Files">
+      <UniqueIdentifier>{0cb724c7-b3a4-498a-9ebc-f7cd6342a3be}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\NeoSmart">
+      <UniqueIdentifier>{9a0c232c-e5c6-4900-be4a-f12fc18adc38}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="..\..\AdoptTools\CppUnit\src\cppunit\AdditionalMessage.cpp">
+      <Filter>CppUnit environment</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\AdoptTools\CppUnit\src\cppunit\Asserter.cpp">
+      <Filter>CppUnit environment</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\AdoptTools\CppUnit\src\cppunit\CompilerOutputter.cpp">
+      <Filter>CppUnit environment</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\AdoptTools\CppUnit\src\cppunit\DefaultProtector.cpp">
+      <Filter>CppUnit environment</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\AdoptTools\CppUnit\src\cppunit\Exception.cpp">
+      <Filter>CppUnit environment</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\AdoptTools\CppUnit\src\cppunit\Message.cpp">
+      <Filter>CppUnit environment</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\AdoptTools\CppUnit\src\cppunit\Protector.cpp">
+      <Filter>CppUnit environment</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\AdoptTools\CppUnit\src\cppunit\ProtectorChain.cpp">
+      <Filter>CppUnit environment</Filter>
+    </ClCompile>
+    <ClCompile Include="RT_Progressor.cpp">
+      <Filter>CppUnit environment</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\AdoptTools\CppUnit\src\cppunit\SourceLine.cpp">
+      <Filter>CppUnit environment</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\AdoptTools\CppUnit\src\cppunit\StringTools.cpp">
+      <Filter>CppUnit environment</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\AdoptTools\CppUnit\src\cppunit\SynchronizedObject.cpp">
+      <Filter>CppUnit environment</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\AdoptTools\CppUnit\src\cppunit\Test.cpp">
+      <Filter>CppUnit environment</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\AdoptTools\CppUnit\src\cppunit\TestCase.cpp">
+      <Filter>CppUnit environment</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\AdoptTools\CppUnit\src\cppunit\TestComposite.cpp">
+      <Filter>CppUnit environment</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\AdoptTools\CppUnit\src\cppunit\TestFactoryRegistry.cpp">
+      <Filter>CppUnit environment</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\AdoptTools\CppUnit\src\cppunit\TestFailure.cpp">
+      <Filter>CppUnit environment</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\AdoptTools\CppUnit\src\cppunit\TestLeaf.cpp">
+      <Filter>CppUnit environment</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\AdoptTools\CppUnit\src\cppunit\TestNamer.cpp">
+      <Filter>CppUnit environment</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\AdoptTools\CppUnit\src\cppunit\TestPath.cpp">
+      <Filter>CppUnit environment</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\AdoptTools\CppUnit\src\cppunit\TestResult.cpp">
+      <Filter>CppUnit environment</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\AdoptTools\CppUnit\src\cppunit\TestResultCollector.cpp">
+      <Filter>CppUnit environment</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\AdoptTools\CppUnit\src\cppunit\TestRunner.cpp">
+      <Filter>CppUnit environment</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\AdoptTools\CppUnit\src\cppunit\TestSuccessListener.cpp">
+      <Filter>CppUnit environment</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\AdoptTools\CppUnit\src\cppunit\TestSuite.cpp">
+      <Filter>CppUnit environment</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\AdoptTools\CppUnit\src\cppunit\TestSuiteBuilderContext.cpp">
+      <Filter>CppUnit environment</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\AdoptTools\CppUnit\src\cppunit\TypeInfoHelper.cpp">
+      <Filter>CppUnit environment</Filter>
+    </ClCompile>
+    <ClCompile Include="UT_Main.cpp">
+      <Filter>CppUnit environment</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\AdoptTools\CppUnit\src\cppunit\XmlDocument.cpp">
+      <Filter>CppUnit environment</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\AdoptTools\CppUnit\src\cppunit\XmlElement.cpp">
+      <Filter>CppUnit environment</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\AdoptTools\CppUnit\src\cppunit\XmlOutputter.cpp">
+      <Filter>CppUnit environment</Filter>
+    </ClCompile>
+    <ClCompile Include="..\helpful\Log.cpp">
+      <Filter>Source Files\helpful</Filter>
+    </ClCompile>
+    <ClCompile Include="..\helpful\Pilgrim.cpp">
+      <Filter>Source Files\helpful</Filter>
+    </ClCompile>
+    <ClCompile Include="..\helpful\Rt_ThreadName.cpp">
+      <Filter>Source Files\helpful</Filter>
+    </ClCompile>
+    <ClCompile Include="..\helpful\StrToTime.cpp">
+      <Filter>Source Files\helpful</Filter>
+    </ClCompile>
+    <ClCompile Include="..\helpful\Utf8.cpp">
+      <Filter>Source Files\helpful</Filter>
+    </ClCompile>
+    <ClCompile Include="..\helpful\X_translate.cpp">
+      <Filter>Source Files\helpful</Filter>
+    </ClCompile>
+    <ClCompile Include="TC_Bbx.cpp">
+      <Filter>TestCase</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\AdoptTools\PugiXML\pugixml.cpp">
+      <Filter>PugiXml</Filter>
+    </ClCompile>
+    <ClCompile Include="..\helpful\ErrorHandler.cpp">
+      <Filter>Source Files\helpful</Filter>
+    </ClCompile>
+    <ClCompile Include="..\helpful\Dump.cpp">
+      <Filter>Source Files\helpful</Filter>
+    </ClCompile>
+    <ClCompile Include="..\helpful\WatchDog.cpp">
+      <Filter>Source Files\helpful</Filter>
+    </ClCompile>
+    <ClCompile Include="..\helpful\AssertHandler.cpp">
+      <Filter>Source Files\helpful</Filter>
+    </ClCompile>
+    <ClCompile Include="stdafx.cpp">
+      <Filter>CppUnit environment</Filter>
+    </ClCompile>
+    <ClCompile Include="..\helpful\ExceptionTracer.cpp">
+      <Filter>Source Files\helpful</Filter>
+    </ClCompile>
+    <ClCompile Include="..\helpful\FilesByMask.cpp">
+      <Filter>Source Files\helpful</Filter>
+    </ClCompile>
+    <ClCompile Include="..\helpful\Interval_Time_t.cpp">
+      <Filter>Source Files\helpful</Filter>
+    </ClCompile>
+    <ClCompile Include="..\helpful\MFCExt.cpp">
+      <Filter>Source Files\helpful</Filter>
+    </ClCompile>
+    <ClCompile Include="..\helpful\Time_Iso.cpp">
+      <Filter>Source Files\helpful</Filter>
+    </ClCompile>
+    <ClCompile Include="..\helpful\DumpSupport.cpp">
+      <Filter>Source Files\helpful</Filter>
+    </ClCompile>
+    <ClCompile Include="..\helpful\DuePath.cpp">
+      <Filter>Source Files\helpful</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="..\..\AdoptTools\CppUnit\src\cppunit\DefaultProtector.h">
+      <Filter>CppUnit environment</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\AdoptTools\CppUnit\src\cppunit\ProtectorChain.h">
+      <Filter>CppUnit environment</Filter>
+    </ClInclude>
+    <ClInclude Include="RT_Progressor.h">
+      <Filter>CppUnit environment</Filter>
+    </ClInclude>
+    <ClInclude Include="..\helpful\std_charm_compile_option.h">
+      <Filter>CppUnit environment</Filter>
+    </ClInclude>
+    <ClInclude Include="stdafx.h">
+      <Filter>CppUnit environment</Filter>
+    </ClInclude>
+    <ClInclude Include="targetver.h">
+      <Filter>CppUnit environment</Filter>
+    </ClInclude>
+    <ClInclude Include="..\helpful\FlowingChanges.h">
+      <Filter>Source Files\helpful</Filter>
+    </ClInclude>
+    <ClInclude Include="..\helpful\Log.h">
+      <Filter>Source Files\helpful</Filter>
+    </ClInclude>
+    <ClInclude Include="..\helpful\LOS_Area.h">
+      <Filter>Source Files\helpful</Filter>
+    </ClInclude>
+    <ClInclude Include="..\helpful\Pilgrim.h">
+      <Filter>Source Files\helpful</Filter>
+    </ClInclude>
+    <ClInclude Include="..\helpful\RT_Singleton.h">
+      <Filter>Source Files\helpful</Filter>
+    </ClInclude>
+    <ClInclude Include="..\helpful\RT_ThreadName.h">
+      <Filter>Source Files\helpful</Filter>
+    </ClInclude>
+    <ClInclude Include="..\helpful\StrToTime.h">
+      <Filter>Source Files\helpful</Filter>
+    </ClInclude>
+    <ClInclude Include="..\helpful\Utf8.h">
+      <Filter>Source Files\helpful</Filter>
+    </ClInclude>
+    <ClInclude Include="..\helpful\X_translate.h">
+      <Filter>Source Files\helpful</Filter>
+    </ClInclude>
+    <ClInclude Include="TC_Bbx.h">
+      <Filter>TestCase</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\AdoptTools\PugiXML\pugiconfig.hpp">
+      <Filter>PugiXml</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\AdoptTools\PugiXML\pugixml.hpp">
+      <Filter>PugiXml</Filter>
+    </ClInclude>
+    <ClInclude Include="..\helpful\ErrorHandler.h">
+      <Filter>Source Files\helpful</Filter>
+    </ClInclude>
+    <ClInclude Include="..\helpful\Dump.h">
+      <Filter>Source Files\helpful</Filter>
+    </ClInclude>
+    <ClInclude Include="..\helpful\WatchDog.h">
+      <Filter>Source Files\helpful</Filter>
+    </ClInclude>
+    <ClInclude Include="..\helpful\AssertHandler.h">
+      <Filter>Source Files\helpful</Filter>
+    </ClInclude>
+    <ClInclude Include="..\helpful\GdiplusH.h">
+      <Filter>Source Files\helpful</Filter>
+    </ClInclude>
+    <ClInclude Include="resource.h">
+      <Filter>Source Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Guess\ClutchesGenerator.h" />
+    <ClInclude Include="..\Guess\ClutchKit.h" />
+    <ClInclude Include="..\Guess\TrainUnityTargetExplorer.h" />
+    <ClInclude Include="..\helpful\ExceptionTracer.h">
+      <Filter>Source Files\helpful</Filter>
+    </ClInclude>
+    <ClInclude Include="..\helpful\FilesByMask.h">
+      <Filter>Source Files\helpful</Filter>
+    </ClInclude>
+    <ClInclude Include="..\helpful\MFCExt.h">
+      <Filter>Source Files\helpful</Filter>
+    </ClInclude>
+    <ClInclude Include="..\helpful\Time_Iso.h">
+      <Filter>Source Files\helpful</Filter>
+    </ClInclude>
+    <ClInclude Include="..\helpful\Cons.h">
+      <Filter>Source Files\helpful</Filter>
+    </ClInclude>
+    <ClInclude Include="..\helpful\DumpSupport.h">
+      <Filter>Source Files\helpful</Filter>
+    </ClInclude>
+    <ClInclude Include="..\helpful\FileId.h">
+      <Filter>Source Files\helpful</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Guess\ClutchesGenerator.h">
+      <Filter>Source Files\Guess</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Guess\ClutchKit.h">
+      <Filter>Source Files\Guess</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Guess\TrainUnityTargetExplorer.h">
+      <Filter>Source Files\Guess</Filter>
+    </ClInclude>
+    <ClInclude Include="..\helpful\DuePath.h">
+      <Filter>Source Files\helpful</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <CustomBuild Include="report.xsl">
+      <Filter>CppUnit environment</Filter>
+    </CustomBuild>
+  </ItemGroup>
+  <ItemGroup>
+    <ResourceCompile Include="UT.rc">
+      <Filter>Resource Files</Filter>
+    </ResourceCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="UT.rc2">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="test_data\d200007.051">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="test_data\d200007.054">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="test_data\d200007.057">
+      <Filter>Resource Files</Filter>
+    </None>
+  </ItemGroup>
+</Project>

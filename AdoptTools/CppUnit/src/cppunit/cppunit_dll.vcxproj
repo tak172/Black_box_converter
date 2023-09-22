@@ -1,0 +1,298 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|Win32">
+      <Configuration>Debug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|Win32">
+      <Configuration>Release</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectGuid>{6407D1BA-0C4D-4903-8BE8-728547FE1BBE}</ProjectGuid>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
+    <ConfigurationType>DynamicLibrary</ConfigurationType>
+    <PlatformToolset>v110</PlatformToolset>
+    <UseOfMfc>false</UseOfMfc>
+    <CharacterSet>MultiByte</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
+    <ConfigurationType>DynamicLibrary</ConfigurationType>
+    <PlatformToolset>v110</PlatformToolset>
+    <UseOfMfc>false</UseOfMfc>
+    <CharacterSet>MultiByte</CharacterSet>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+    <Import Project="$(VCTargetsPath)Microsoft.CPP.UpgradeFromVC60.props" />
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+    <Import Project="$(VCTargetsPath)Microsoft.CPP.UpgradeFromVC60.props" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup>
+    <_ProjectFileVersion>11.0.50727.1</_ProjectFileVersion>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <OutDir>.\ReleaseDll\</OutDir>
+    <IntDir>.\ReleaseDll\</IntDir>
+    <LinkIncremental>false</LinkIncremental>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <OutDir>DebugDll\</OutDir>
+    <IntDir>DebugDll\</IntDir>
+    <LinkIncremental>true</LinkIncremental>
+    <TargetName>$(ProjectName)</TargetName>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <Midl>
+      <PreprocessorDefinitions>NDEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <MkTypLibCompatible>true</MkTypLibCompatible>
+      <SuppressStartupBanner>true</SuppressStartupBanner>
+      <TargetEnvironment>Win32</TargetEnvironment>
+      <TypeLibraryName>.\ReleaseDll/cppunit_dll.tlb</TypeLibraryName>
+      <HeaderFileName />
+    </Midl>
+    <ClCompile>
+      <Optimization>MaxSpeed</Optimization>
+      <InlineFunctionExpansion>OnlyExplicitInline</InlineFunctionExpansion>
+      <AdditionalIncludeDirectories>..\..\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>WIN32;NDEBUG;_WINDOWS;_USRDLL;CPPUNIT_BUILD_DLL;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <StringPooling>true</StringPooling>
+      <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <RuntimeTypeInfo>true</RuntimeTypeInfo>
+      <PrecompiledHeaderOutputFile>.\ReleaseDll/cppunit_dll.pch</PrecompiledHeaderOutputFile>
+      <AssemblerListingLocation>.\ReleaseDll/</AssemblerListingLocation>
+      <ObjectFileName>.\ReleaseDll/</ObjectFileName>
+      <ProgramDataBaseFileName>..\..\lib\cppunit_dll.PDB</ProgramDataBaseFileName>
+      <WarningLevel>Level3</WarningLevel>
+      <SuppressStartupBanner>true</SuppressStartupBanner>
+      <DebugInformationFormat>OldStyle</DebugInformationFormat>
+    </ClCompile>
+    <ResourceCompile>
+      <PreprocessorDefinitions>NDEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <Culture>0x040c</Culture>
+    </ResourceCompile>
+    <Link>
+      <OutputFile>.\ReleaseDll/cppunit_dll.dll</OutputFile>
+      <SuppressStartupBanner>true</SuppressStartupBanner>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <ProgramDatabaseFile>..\..\lib12\cppunit_dll.pdb</ProgramDatabaseFile>
+      <RandomizedBaseAddress>false</RandomizedBaseAddress>
+      <DataExecutionPrevention />
+      <ImportLibrary>.\ReleaseDll/cppunit_dll.lib</ImportLibrary>
+      <TargetMachine>MachineX86</TargetMachine>
+    </Link>
+    <Bscmake>
+      <SuppressStartupBanner>true</SuppressStartupBanner>
+      <OutputFile>.\ReleaseDll/cppunit_dll.bsc</OutputFile>
+    </Bscmake>
+    <PostBuildEvent>
+      <Message>Copying target to lib/</Message>
+      <Command>copy "$(TargetPath)" ..\..\lib12\$(TargetName).dll
+copy "$(TargetDir)$(TargetName).lib" ..\..\lib12\$(TargetName).lib
+</Command>
+    </PostBuildEvent>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <Midl>
+      <PreprocessorDefinitions>_DEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <MkTypLibCompatible>true</MkTypLibCompatible>
+      <SuppressStartupBanner>true</SuppressStartupBanner>
+      <TargetEnvironment>Win32</TargetEnvironment>
+      <TypeLibraryName>.\DebugDll/cppunit_dll.tlb</TypeLibraryName>
+      <HeaderFileName />
+    </Midl>
+    <ClCompile>
+      <Optimization>Disabled</Optimization>
+      <AdditionalIncludeDirectories>..\..\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>WIN32;_DEBUG;_WINDOWS;_USRDLL;CPPUNIT_BUILD_DLL;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <MinimalRebuild>true</MinimalRebuild>
+      <BasicRuntimeChecks>EnableFastChecks</BasicRuntimeChecks>
+      <RuntimeLibrary>MultiThreadedDebugDLL</RuntimeLibrary>
+      <RuntimeTypeInfo>true</RuntimeTypeInfo>
+      <PrecompiledHeaderOutputFile>.\DebugDll/cppunit_dll.pch</PrecompiledHeaderOutputFile>
+      <AssemblerListingLocation>.\DebugDll/</AssemblerListingLocation>
+      <ObjectFileName>.\DebugDll/</ObjectFileName>
+      <ProgramDataBaseFileName>..\..\lib\cppunitd_dll.PDB</ProgramDataBaseFileName>
+      <WarningLevel>Level3</WarningLevel>
+      <SuppressStartupBanner>true</SuppressStartupBanner>
+      <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
+    </ClCompile>
+    <ResourceCompile>
+      <PreprocessorDefinitions>_DEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <Culture>0x040c</Culture>
+    </ResourceCompile>
+    <Link>
+      <OutputFile>.\DebugDll\cppunitd_dll.dll</OutputFile>
+      <SuppressStartupBanner>true</SuppressStartupBanner>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <ProgramDatabaseFile>..\..\lib12\cppunitd_dll.pdb</ProgramDatabaseFile>
+      <RandomizedBaseAddress>false</RandomizedBaseAddress>
+      <DataExecutionPrevention />
+      <ImportLibrary>.\DebugDll/cppunitd_dll.lib</ImportLibrary>
+      <TargetMachine>MachineX86</TargetMachine>
+    </Link>
+    <Bscmake>
+      <SuppressStartupBanner>true</SuppressStartupBanner>
+      <OutputFile>.\DebugDll/cppunit_dll.bsc</OutputFile>
+    </Bscmake>
+    <PostBuildEvent>
+      <Message>Copying target to lib/</Message>
+      <Command>copy "$(TargetDir)cppunitd_dll.dll" "$(TargetDir)..\..\..\lib12\cppunitd_dll.dll"
+copy "$(TargetDir)cppunitd_dll.lib" "$(TargetDir)..\..\..\lib12\cppunitd_dll.lib"
+</Command>
+    </PostBuildEvent>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <ClCompile Include="DllMain.cpp" />
+    <ClCompile Include="RepeatedTest.cpp" />
+    <ClCompile Include="TestCaseDecorator.cpp" />
+    <ClCompile Include="TestDecorator.cpp" />
+    <ClCompile Include="TestSetUp.cpp" />
+    <ClCompile Include="TestFactoryRegistry.cpp" />
+    <ClCompile Include="TestNamer.cpp" />
+    <ClCompile Include="TestSuiteBuilderContext.cpp" />
+    <ClCompile Include="TypeInfoHelper.cpp" />
+    <ClCompile Include="AdditionalMessage.cpp" />
+    <ClCompile Include="Asserter.cpp" />
+    <ClCompile Include="Exception.cpp" />
+    <ClCompile Include="Message.cpp" />
+    <ClCompile Include="SourceLine.cpp" />
+    <ClCompile Include="SynchronizedObject.cpp" />
+    <ClCompile Include="Test.cpp" />
+    <ClCompile Include="TestAssert.cpp" />
+    <ClCompile Include="TestCase.cpp" />
+    <ClCompile Include="TestComposite.cpp" />
+    <ClCompile Include="TestFailure.cpp" />
+    <ClCompile Include="TestLeaf.cpp" />
+    <ClCompile Include="TestPath.cpp" />
+    <ClCompile Include="TestResult.cpp" />
+    <ClCompile Include="TestRunner.cpp" />
+    <ClCompile Include="TestSuite.cpp" />
+    <ClCompile Include="CompilerOutputter.cpp" />
+    <ClCompile Include="TestResultCollector.cpp" />
+    <ClCompile Include="TextOutputter.cpp" />
+    <ClCompile Include="XmlOutputter.cpp" />
+    <ClCompile Include="XmlOutputterHook.cpp" />
+    <ClCompile Include="TextTestRunner.cpp" />
+    <ClCompile Include="BriefTestProgressListener.cpp" />
+    <ClCompile Include="TestSuccessListener.cpp" />
+    <ClCompile Include="TextTestProgressListener.cpp" />
+    <ClCompile Include="TextTestResult.cpp" />
+    <ClCompile Include="BeosDynamicLibraryManager.cpp" />
+    <ClCompile Include="DynamicLibraryManager.cpp" />
+    <ClCompile Include="DynamicLibraryManagerException.cpp" />
+    <ClCompile Include="PlugInManager.cpp" />
+    <ClCompile Include="PlugInParameters.cpp" />
+    <ClCompile Include="TestPlugInDefaultImpl.cpp" />
+    <ClCompile Include="UnixDynamicLibraryManager.cpp" />
+    <ClCompile Include="Win32DynamicLibraryManager.cpp" />
+    <ClCompile Include="StringTools.cpp" />
+    <ClCompile Include="XmlDocument.cpp" />
+    <ClCompile Include="XmlElement.cpp" />
+    <ClCompile Include="DefaultProtector.cpp" />
+    <ClCompile Include="Protector.cpp" />
+    <ClCompile Include="ProtectorChain.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="..\..\include\cppunit\extensions\ExceptionTestCaseDecorator.h" />
+    <ClInclude Include="..\..\include\cppunit\extensions\Orthodox.h" />
+    <ClInclude Include="..\..\include\cppunit\extensions\RepeatedTest.h" />
+    <ClInclude Include="..\..\include\cppunit\extensions\TestCaseDecorator.h" />
+    <ClInclude Include="..\..\include\cppunit\extensions\TestDecorator.h" />
+    <ClInclude Include="..\..\include\cppunit\extensions\TestSetUp.h" />
+    <ClInclude Include="..\..\include\cppunit\extensions\AutoRegisterSuite.h" />
+    <ClInclude Include="..\..\include\cppunit\extensions\HelperMacros.h" />
+    <ClInclude Include="..\..\include\cppunit\TestCaller.h" />
+    <ClInclude Include="..\..\include\cppunit\extensions\TestFactory.h" />
+    <ClInclude Include="..\..\include\cppunit\extensions\TestFactoryRegistry.h" />
+    <ClInclude Include="..\..\include\cppunit\extensions\TestFixtureFactory.h" />
+    <ClInclude Include="..\..\include\cppunit\extensions\TestNamer.h" />
+    <ClInclude Include="..\..\include\cppunit\extensions\TestSuiteBuilder.h" />
+    <ClInclude Include="..\..\include\cppunit\extensions\TestSuiteBuilderContext.h" />
+    <ClInclude Include="..\..\include\cppunit\extensions\TestSuiteFactory.h" />
+    <ClInclude Include="..\..\include\cppunit\extensions\TypeInfoHelper.h" />
+    <ClInclude Include="..\..\include\cppunit\AdditionalMessage.h" />
+    <ClInclude Include="..\..\include\cppunit\Asserter.h" />
+    <ClInclude Include="..\..\include\cppunit\Exception.h" />
+    <ClInclude Include="..\..\include\cppunit\Message.h" />
+    <ClInclude Include="..\..\include\cppunit\SourceLine.h" />
+    <ClInclude Include="..\..\include\cppunit\SynchronizedObject.h" />
+    <ClInclude Include="..\..\include\cppunit\Test.h" />
+    <ClInclude Include="..\..\include\cppunit\TestAssert.h" />
+    <ClInclude Include="..\..\include\cppunit\TestCase.h" />
+    <ClInclude Include="..\..\include\cppunit\TestComposite.h" />
+    <ClInclude Include="..\..\include\cppunit\TestFailure.h" />
+    <ClInclude Include="..\..\include\cppunit\TestFixture.h" />
+    <ClInclude Include="..\..\include\cppunit\TestLeaf.h" />
+    <ClInclude Include="..\..\include\cppunit\TestListener.h" />
+    <ClInclude Include="..\..\include\cppunit\TestPath.h" />
+    <ClInclude Include="..\..\include\cppunit\TestResult.h" />
+    <ClInclude Include="..\..\include\cppunit\TestRunner.h" />
+    <ClInclude Include="..\..\include\cppunit\TestSuite.h" />
+    <ClInclude Include="..\..\include\cppunit\CompilerOutputter.h" />
+    <ClInclude Include="..\..\include\cppunit\Outputter.h" />
+    <ClInclude Include="..\..\include\cppunit\TestResultCollector.h" />
+    <ClInclude Include="..\..\include\cppunit\TextOutputter.h" />
+    <ClInclude Include="..\..\include\cppunit\XmlOutputter.h" />
+    <ClInclude Include="..\..\include\cppunit\XmlOutputterHook.h" />
+    <ClInclude Include="..\..\include\cppunit\config\config-bcb5.h" />
+    <ClInclude Include="..\..\include\cppunit\config\config-mac.h" />
+    <ClInclude Include="..\..\include\cppunit\config\config-msvc6.h" />
+    <ClInclude Include="..\..\include\cppunit\config\CppUnitApi.h" />
+    <ClInclude Include="..\..\include\cppunit\portability\CppUnitDeque.h" />
+    <ClInclude Include="..\..\include\cppunit\portability\CppUnitMap.h" />
+    <ClInclude Include="..\..\include\cppunit\portability\CppUnitSet.h" />
+    <ClInclude Include="..\..\include\cppunit\portability\CppUnitStack.h" />
+    <ClInclude Include="..\..\include\cppunit\portability\CppUnitVector.h" />
+    <ClInclude Include="..\..\include\cppunit\Portability.h" />
+    <ClInclude Include="..\..\include\cppunit\config\SelectDllLoader.h" />
+    <ClInclude Include="..\..\include\cppunit\config\SourcePrefix.h" />
+    <ClInclude Include="..\..\include\cppunit\ui\text\TestRunner.h" />
+    <ClInclude Include="..\..\include\cppunit\ui\text\TextTestRunner.h" />
+    <ClInclude Include="..\..\include\cppunit\TextTestRunner.h" />
+    <ClInclude Include="..\..\include\cppunit\BriefTestProgressListener.h" />
+    <ClInclude Include="..\..\include\cppunit\TextTestProgressListener.h" />
+    <ClInclude Include="..\..\include\cppunit\TextTestResult.h" />
+    <ClInclude Include="..\..\include\cppunit\plugin\DynamicLibraryManager.h" />
+    <ClInclude Include="..\..\include\cppunit\plugin\DynamicLibraryManagerException.h" />
+    <ClInclude Include="..\..\include\cppunit\plugin\PlugInManager.h" />
+    <ClInclude Include="..\..\include\cppunit\plugin\PlugInParameters.h" />
+    <ClInclude Include="..\..\include\cppunit\plugin\TestPlugIn.h" />
+    <ClInclude Include="..\..\include\cppunit\plugin\TestPlugInDefaultImpl.h" />
+    <ClInclude Include="..\..\include\cppunit\tools\StringTools.h" />
+    <ClInclude Include="..\..\include\cppunit\tools\XmlDocument.h" />
+    <ClInclude Include="..\..\include\cppunit\tools\XmlElement.h" />
+    <ClInclude Include="DefaultProtector.h" />
+    <ClInclude Include="..\..\include\cppunit\Protector.h" />
+    <ClInclude Include="ProtectorChain.h" />
+    <ClInclude Include="ProtectorContext.h" />
+    <ClInclude Include="..\..\include\cppunit\extensions\XmlInputHelper.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="..\..\ChangeLog" />
+    <None Include="..\..\doc\cookbook.dox" />
+    <None Include="..\..\doc\FAQ" />
+    <None Include="..\..\NEWS" />
+    <None Include="..\..\doc\other_documentation.dox" />
+    <None Include="..\..\TODO" />
+    <None Include="Makefile.am" />
+    <None Include="..\..\include\cppunit\Makefile.am" />
+  </ItemGroup>
+  <ItemGroup>
+    <Text Include="..\..\INSTALL-WIN32.txt" />
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>
