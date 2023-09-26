@@ -1,9 +1,10 @@
-﻿#include "stdafx.h"
+#include "stdafx.h"
 
 #include "bbx_Requirements.h"
 #include "bbx_Location.h"
 #include "bbx_Stamp.h"
 #include "bbx_Reader.h"
+
 #include "Utf8.h"
 
 const unsigned MINFILESIZE = 1;
@@ -14,8 +15,7 @@ enum class operation
     filtration
 };
 
-// path to Location
-Bbx::Location p2l(const std::wstring& str)
+Bbx::Location PathToLocation(const std::wstring& str)
 {
     size_t folder_end = str.find_last_of('\\');
     size_t pref_end = str.find_last_of('_');
@@ -25,6 +25,28 @@ Bbx::Location p2l(const std::wstring& str)
         return {};
 
     return { {str, 0, folder_end}, {str, folder_end + 1, pref_end - folder_end}, {str, suff_begin, str.size() - suff_begin} };
+}
+
+std::string HexToBinary(const std::string& hex_str)
+{
+    std::string binary_str;
+
+    for (size_t i = 2; i < hex_str.length(); i += 2)
+    {
+        std::string byte_str = hex_str.substr(i, 2);
+        try
+        {
+            uint8_t byte = std::stoi(byte_str, nullptr, 16);
+            binary_str.push_back(static_cast<char>(byte));
+        }
+        catch (const std::exception&)
+        {
+            binary_str.clear();
+            break;
+        }
+    }
+
+    return binary_str;
 }
 
 bool PushRecord(Bbx::Reader& reader, std::shared_ptr<Bbx::Writer>& writer, operation oper, std::string& pattern = std::string())
@@ -59,8 +81,14 @@ bool PushRecord(Bbx::Reader& reader, std::shared_ptr<Bbx::Writer>& writer, opera
             std::string find_data = data.data() ? data.data() : "";
             std::string find_caption = caption.data() ? caption.data() : "";
 
-            // выходим, если не нашли - выходим
-            if (!(find_caption.find(pattern) != std::string::npos || find_data.find(pattern) != std::string::npos))
+            if (pattern.empty()) {
+                std::cerr << "Invalid hexadecimal pattern." << std::endl;
+                return false;
+            }
+
+            // если не нашли - выходим
+            if (std::search(find_data.begin(), find_data.end(), pattern.begin(), pattern.end()) == find_data.end() &&
+                std::search(find_caption.begin(), find_caption.end(), pattern.begin(), pattern.end()) == find_caption.end())
                 return true;
         }
 
@@ -116,6 +144,10 @@ bool Division(Bbx::Reader& reader, std::shared_ptr<Bbx::Writer>& writer)
 
 bool Filtration(Bbx::Reader& reader, std::shared_ptr<Bbx::Writer>& writer, std::string& pattern)
 {
+    // если обнаружили префикс вначале
+    if (pattern.find_first_of("0x") == 0)
+        pattern = HexToBinary(pattern);
+
     while (true)
     {
         if (!PushRecord(reader, writer, operation::filtration, pattern))
@@ -153,8 +185,8 @@ int main(int argc, char* argv[])
     std::wstring i_path(FromUtf8(argv[1])), o_path(FromUtf8(argv[3]));
     std::string operation(argv[2]);
 
-    Bbx::Reader reader(p2l(i_path));
-    auto writer = Bbx::Writer::create(p2l(o_path));
+    Bbx::Reader reader(PathToLocation(i_path));
+    auto writer = Bbx::Writer::create(PathToLocation(o_path));
 
     reader.setDirection(true);
     Bbx::Stamp beg = reader.getBoundStamp().first;
@@ -177,7 +209,8 @@ int main(int argc, char* argv[])
         {
             std::cerr << "This operation requires a search pattern.\n"
                 "Usage: Converter.exe <input_path\\pref_.suff> <operation> <output_path\\pref_.suff> <pattern>\n"
-                "<pattern> - pattern by which the records will be filtered(fifth parameter).\n";
+                "<pattern> - pattern by which the records will be filtered(fifth parameter).\n"
+                "Use the 0x prefix to filter on binary data, which is specified in hexadecimal, for example <0x4B>.\n";
             return 1;
         }
 
